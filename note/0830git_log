@@ -157,25 +157,25 @@ hyh@hyh-iMac:~/git/0807git/python$ git pull origin master
 Already up-to-date.
 hyh@hyh-iMac:~/git/0807git/python$ git log
 commit 35301677f5c082260117b909a96f51489110640a
-Author: hyhplus <2859268670@qq.com>
+Author: hyh**us <28*****670@qq.com>
 Date:   Thu Aug 30 18:48:28 2018 +0800
 
     add a test branch
 
 commit 5c5c0f819dba5422f277fb8e31d5c8c64709aa80
-Author: jackffjj <2596516643@qqcom>
+Author: jac**jj <25*****643@qqcom>
 Date:   Thu Aug 30 17:09:28 2018 +0800
 
     add test
 
 commit 9a844e9978c032ae1502af78fa599858c63da6ae
-Author: jackffjj <2596516643@qqcom>
+Author: ja**jj <25****643@qqcom>
 Date:   Thu Aug 30 16:51:23 2018 +0800
 
     jack commit
 
 commit 70c6edadb10b68a2ef32d67993e5dcec27c0ee03
-Author: hyhplus <2859268670@qq.com>
+Author: hy**us <28***670@qq.com>
 Date:   Thu Aug 30 12:54:30 2018 +0800
 
     create new file
