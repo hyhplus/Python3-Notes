@@ -1,0 +1,22 @@
+test branch dev_evan:
+
+git branch dev_evan
+git checkout dev_evan
+
+touch test
+vim test
+
+git add -A
+git commit -m "add test file"
+
+git pull
+
+git push origin dev_evan 
+
+git merge dev_evan
+
+
+git pull 
+git pull origin dev_evan
+
+git push origin master
