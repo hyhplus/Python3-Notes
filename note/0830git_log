@@ -1,0 +1,376 @@
+hyh@hyh-iMac:~/git/0807git/python$ git checkout master
+切换到分支 'master'
+您的分支与上游分支 'origin/master' 一致。
+
+hyh@hyh-iMac:~/git/0807git/python$ git merge frag
+Already up-to-date.
+hyh@hyh-iMac:~/git/0807git/python$ git branch -d frag
+已删除分支 frag（曾为 70c6eda）。
+hyh@hyh-iMac:~/git/0807git/python$ git branch
+  dev
+* master
+
+hyh@hyh-iMac:~/git/0807git/python$ git merge dev
+Already up-to-date.
+hyh@hyh-iMac:~/git/0807git/python$ git push
+To git@github.com:hyhplus/python.git
+ ! [rejected]        dev -> dev (fetch first)
+ ! [rejected]        master -> master (fetch first)
+error: 无法推送一些引用到 'git@github.com:hyhplus/python.git'
+提示：更新被拒绝，因为远程仓库包含您本地尚不存在的提交。这通常是因为另外
+提示：一个仓库已向该引用进行了推送。再次推送前，您可能需要先整合远程变更
+提示：（如 'git pull ...'）。
+提示：详见 'git push --help' 中的 'Note about fast-forwards' 小节。
+hyh@hyh-iMac:~/git/0807git/python$ ls
+0810-python-note  note  README.md
+hyh@hyh-iMac:~/git/0807git/python$ git pull 
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 1), reused 6 (delta 1), pack-reused 0
+展开对象中: 100% (6/6), 完成.
+来自 github.com:hyhplus/python
+   70c6eda..9a844e9  master     -> origin/master
+   70c6eda..5c5c0f8  dev        -> origin/dev
+更新 70c6eda..9a844e9
+Fast-forward
+ "0828-03\345\216\237\345\247\213\345\214\205.zip" | Bin 0 -> 1793511 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 "0828-03\345\216\237\345\247\213\345\214\205.zip"
+hyh@hyh-iMac:~/git/0807git/python$ ls
+0810-python-note  0828-03原始包.zip  note  README.md
+hyh@hyh-iMac:~/git/0807git/python$ git pull origin dev
+来自 github.com:hyhplus/python
+ * branch            dev        -> FETCH_HEAD
+更新 9a844e9..5c5c0f8
+Fast-forward
+ test | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 test
+hyh@hyh-iMac:~/git/0807git/python$ ls
+0810-python-note  0828-03原始包.zip  note  README.md  test
+hyh@hyh-iMac:~/git/0807git/python$ git merge dev
+Already up-to-date.
+hyh@hyh-iMac:~/git/0807git/python$ git merge
+Already up-to-date.
+hyh@hyh-iMac:~/git/0807git/python$ git push 
+Total 0 (delta 0), reused 0 (delta 0)
+To git@github.com:hyhplus/python.git
+   9a844e9..5c5c0f8  master -> master
+ ! [rejected]        dev -> dev (non-fast-forward)
+error: 无法推送一些引用到 'git@github.com:hyhplus/python.git'
+提示：更新被拒绝，因为推送的一个分支的最新提交落后于其对应的远程分支。
+提示：检出该分支并整合远程变更（如 'git pull ...'），然后再推送。详见
+提示：'git push --help' 中的 'Note about fast-forwards' 小节。
+
+hyh@hyh-iMac:~/git/0807git/python$ git push origin master
+Everything up-to-date
+hyh@hyh-iMac:~/git/0807git/python$ git merge
+Already up-to-date.
+hyh@hyh-iMac:~/git/0807git/python$ git branch
+  dev
+* master
+hyh@hyh-iMac:~/git/0807git/python$ git checkout -b dev_evan origin/dev_evan
+fatal: 不能同时更新路径并切换到分支'dev_evan'。
+您是想要检出 'origin/dev_evan' 但其未能解析为提交么？
+
+hyh@hyh-iMac:~/git/0807git/python$ git branch dev_evan
+hyh@hyh-iMac:~/git/0807git/python$ git branch
+  dev
+  dev_evan
+* master
+hyh@hyh-iMac:~/git/0807git/python$ git checkout dev_evan
+切换到分支 'dev_evan'
+hyh@hyh-iMac:~/git/0807git/python$ touch evan
+hyh@hyh-iMac:~/git/0807git/python$ vim evan
+hyh@hyh-iMac:~/git/0807git/python$ vim evan
+hyh@hyh-iMac:~/git/0807git/python$ git add -A
+hyh@hyh-iMac:~/git/0807git/python$ git commit
+使用"fg" 返回nano
+
+[1]+  已停止               git commit
+hyh@hyh-iMac:~/git/0807git/python$ git commit -m "add a test branch"
+[dev_evan 3530167] add a test branch
+ 1 file changed, 22 insertions(+)
+ create mode 100644 evan
+hyh@hyh-iMac:~/git/0807git/python$ git pull 
+来自 github.com:hyhplus/python
+ * [新分支]          jack-dev   -> origin/jack-dev
+当前分支没有跟踪信息。
+请指定您要合并哪一个分支。
+详见 git-pull(1)。
+
+    git pull <remote> <branch>
+
+如果您想要为此分支创建跟踪信息，您可以执行：
+
+    git branch --set-upstream-to=origin/<branch> dev_evan
+
+hyh@hyh-iMac:~/git/0807git/python$ git branch --set-upstream-to=origin/<branch> dev_evan
+bash: branch: 没有那个文件或目录
+hyh@hyh-iMac:~/git/0807git/python$ git branch --set-upstream-to=origin/dev_evan
+error: 请求的上游分支 'origin/dev_evan' 不存在
+提示：
+提示：如果您正计划基于远程一个现存的上游分支开始你的工作，
+提示：您可能需要执行 "git fetch" 来获取分支。
+提示：
+提示：如果您正计划推送一个能与对应远程分支建立跟踪的新的本地分支，
+提示：您可能需要使用 "git push -u" 推送分支并配置和上游的关联。
+
+hyh@hyh-iMac:~/git/0807git/python$ git push -u origin dev_evan
+对象计数中: 3, 完成.
+Delta compression using up to 2 threads.
+压缩对象中: 100% (3/3), 完成.
+写入对象中: 100% (3/3), 385 bytes | 0 bytes/s, 完成.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To git@github.com:hyhplus/python.git
+ * [new branch]      dev_evan -> dev_evan
+分支 dev_evan 设置为跟踪来自 origin 的远程分支 dev_evan。
+
+hyh@hyh-iMac:~/git/0807git/python$ git pull
+Already up-to-date.
+hyh@hyh-iMac:~/git/0807git/python$ git branch
+  dev
+* dev_evan
+  master
+hyh@hyh-iMac:~/git/0807git/python$ git checkout master
+切换到分支 'master'
+您的分支与上游分支 'origin/master' 一致。
+hyh@hyh-iMac:~/git/0807git/python$ vim 0810-python-note 
+hyh@hyh-iMac:~/git/0807git/python$ git pull origin master
+来自 github.com:hyhplus/python
+ * branch            master     -> FETCH_HEAD
+Already up-to-date.
+
+hyh@hyh-iMac:~/git/0807git/python$ git push origin branch
+error: src refspec branch does not match any.
+error: 无法推送一些引用到 'git@github.com:hyhplus/python.git'
+hyh@hyh-iMac:~/git/0807git/python$ git branch dev_evan
+fatal: 一个分支名 'dev_evan' 已经存在。
+hyh@hyh-iMac:~/git/0807git/python$ git checkout dev_evan 
+M	0810-python-note
+切换到分支 'dev_evan'
+您的分支与上游分支 'origin/dev_evan' 一致。
+hyh@hyh-iMac:~/git/0807git/python$ git pull origin master
+来自 github.com:hyhplus/python
+ * branch            master     -> FETCH_HEAD
+Already up-to-date.
+hyh@hyh-iMac:~/git/0807git/python$ git log
+commit 35301677f5c082260117b909a96f51489110640a
+Author: hyhplus <2859268670@qq.com>
+Date:   Thu Aug 30 18:48:28 2018 +0800
+
+    add a test branch
+
+commit 5c5c0f819dba5422f277fb8e31d5c8c64709aa80
+Author: jackffjj <2596516643@qqcom>
+Date:   Thu Aug 30 17:09:28 2018 +0800
+
+    add test
+
+commit 9a844e9978c032ae1502af78fa599858c63da6ae
+Author: jackffjj <2596516643@qqcom>
+Date:   Thu Aug 30 16:51:23 2018 +0800
+
+    jack commit
+
+commit 70c6edadb10b68a2ef32d67993e5dcec27c0ee03
+Author: hyhplus <2859268670@qq.com>
+Date:   Thu Aug 30 12:54:30 2018 +0800
+
+    create new file
+hyh@hyh-iMac:~/git/0807git/python$ git push origin dev_evan
+Everything up-to-date
+hyh@hyh-iMac:~/git/0807git/python$ git checkout master
+M	0810-python-note
+切换到分支 'master'
+您的分支与上游分支 'origin/master' 一致。
+
+hyh@hyh-iMac:~/git/0807git/python$ git commit -m "update"
+位于分支 master
+您的分支与上游分支 'origin/master' 一致。
+尚未暂存以备提交的变更：
+	修改：     0810-python-note
+
+修改尚未加入提交
+
+hyh@hyh-iMac:~/git/0807git/python$ git add -A
+hyh@hyh-iMac:~/git/0807git/python$ git branch
+  dev
+  dev_evan
+* master
+hyh@hyh-iMac:~/git/0807git/python$ git commit -m "update"
+[master a34df20] update
+ 1 file changed, 3 insertions(+)
+hyh@hyh-iMac:~/git/0807git/python$ git pull
+Already up-to-date.
+hyh@hyh-iMac:~/git/0807git/python$ git pull master
+fatal: 'master' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+hyh@hyh-iMac:~/git/0807git/python$ git pull origin master
+来自 github.com:hyhplus/python
+ * branch            master     -> FETCH_HEAD
+Already up-to-date.
+hyh@hyh-iMac:~/git/0807git/python$ git push origin master
+对象计数中: 3, 完成.
+Delta compression using up to 2 threads.
+压缩对象中: 100% (3/3), 完成.
+写入对象中: 100% (3/3), 314 bytes | 0 bytes/s, 完成.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To git@github.com:hyhplus/python.git
+   5c5c0f8..a34df20  master -> master
+
+hyh@hyh-iMac:~/git/0807git/python$ git checkout dev_evan
+切换到分支 'dev_evan'
+您的分支与上游分支 'origin/dev_evan' 一致。
+hyh@hyh-iMac:~/git/0807git/python$ vim 0810-python-note 
+hyh@hyh-iMac:~/git/0807git/python$ git add -a 
+error: unknown switch `a'
+用法：git add [<选项>] [--] <路径规格>...
+
+    -n, --dry-run         演习
+    -v, --verbose         冗长输出
+
+    -i, --interactive     交互式拣选
+    -p, --patch           交互式挑选数据块
+    -e, --edit            编辑当前差异并应用
+    -f, --force           允许添加忽略的文件
+    -u, --update          更新已跟踪的文件
+    -N, --intent-to-add   只记录，该路径稍后再添加
+    -A, --all             添加所有改变的已跟踪文件和未跟踪文件
+    --ignore-removal      忽略工作区中移除的路径（和 --no-all 相同）
+    --refresh             不添加，只刷新索引
+    --ignore-errors       跳过因出错不能添加的文件
+    --ignore-missing      检查在演习模式下文件（即使不存在）是否被忽略
+
+hyh@hyh-iMac:~/git/0807git/python$ git add -A
+hyh@hyh-iMac:~/git/0807git/python$ git commit -m "dev update"
+[dev_evan 88e2c8d] dev update
+ 1 file changed, 5 insertions(+)
+hyh@hyh-iMac:~/git/0807git/python$ git pull origin dev_evan
+来自 github.com:hyhplus/python
+ * branch            dev_evan   -> FETCH_HEAD
+Already up-to-date.
+
+hyh@hyh-iMac:~/git/0807git/python$ git push origin dev_evan
+对象计数中: 3, 完成.
+Delta compression using up to 2 threads.
+压缩对象中: 100% (3/3), 完成.
+写入对象中: 100% (3/3), 320 bytes | 0 bytes/s, 完成.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To git@github.com:hyhplus/python.git
+   3530167..88e2c8d  dev_evan -> dev_evan
+hyh@hyh-iMac:~/git/0807git/python$ git merge dev_evan
+Already up-to-date.
+hyh@hyh-iMac:~/git/0807git/python$ git pull origin master
+来自 github.com:hyhplus/python
+ * branch            master     -> FETCH_HEAD
+自动合并 0810-python-note
+冲突（内容）：合并冲突于 0810-python-note
+自动合并失败，修正冲突然后提交修正的结果。
+
+hyh@hyh-iMac:~/git/0807git/python$ vim 0810-python-note 
+hyh@hyh-iMac:~/git/0807git/python$ git merge dev_evan
+error: merge is not possible because you have unmerged files.
+提示：请在工作区改正文件，然后酌情使用 'git add/rm <文件>' 命令标记
+提示：解决方案并提交。
+fatal: Exiting because of an unresolved conflict.
+hyh@hyh-iMac:~/git/0807git/python$ git push 
+To git@github.com:hyhplus/python.git
+ ! [rejected]        dev -> dev (non-fast-forward)
+error: 无法推送一些引用到 'git@github.com:hyhplus/python.git'
+提示：更新被拒绝，因为推送的一个分支的最新提交落后于其对应的远程分支。
+提示：检出该分支并整合远程变更（如 'git pull ...'），然后再推送。详见
+提示：'git push --help' 中的 'Note about fast-forwards' 小节。
+
+hyh@hyh-iMac:~/git/0807git/python$ git add -A
+hyh@hyh-iMac:~/git/0807git/python$ git commit -m "ok"
+[dev_evan cfcff0b] ok
+
+hyh@hyh-iMac:~/git/0807git/python$ git push
+对象计数中: 3, 完成.
+Delta compression using up to 2 threads.
+压缩对象中: 100% (3/3), 完成.
+写入对象中: 100% (3/3), 346 bytes | 0 bytes/s, 完成.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To git@github.com:hyhplus/python.git
+   88e2c8d..cfcff0b  dev_evan -> dev_evan
+ ! [rejected]        dev -> dev (non-fast-forward)
+error: 无法推送一些引用到 'git@github.com:hyhplus/python.git'
+提示：更新被拒绝，因为推送的一个分支的最新提交落后于其对应的远程分支。
+提示：检出该分支并整合远程变更（如 'git pull ...'），然后再推送。详见
+提示：'git push --help' 中的 'Note about fast-forwards' 小节。
+hyh@hyh-iMac:~/git/0807git/python$ git branch
+  dev
+* dev_evan
+  master
+
+hyh@hyh-iMac:~/git/0807git/python$ git pull origin master
+来自 github.com:hyhplus/python
+ * branch            master     -> FETCH_HEAD
+Already up-to-date.
+
+hyh@hyh-iMac:~/git/0807git/python$ git commit -m "modify"
+位于分支 dev_evan
+您的分支与上游分支 'origin/dev_evan' 一致。
+无文件要提交，干净的工作区
+
+hyh@hyh-iMac:~/git/0807git/python$ git checkout master
+切换到分支 'master'
+您的分支与上游分支 'origin/master' 一致。
+
+hyh@hyh-iMac:~/git/0807git/python$ git commit -m "modify"
+位于分支 master
+您的分支与上游分支 'origin/master' 一致。
+无文件要提交，干净的工作区
+hyh@hyh-iMac:~/git/0807git/python$ git add -A
+hyh@hyh-iMac:~/git/0807git/python$ git commit -m "modify"
+位于分支 master
+您的分支与上游分支 'origin/master' 一致。
+无文件要提交，干净的工作区
+hyh@hyh-iMac:~/git/0807git/python$ git pull origin master
+来自 github.com:hyhplus/python
+ * branch            master     -> FETCH_HEAD
+Already up-to-date.
+
+hyh@hyh-iMac:~/git/0807git/python$ git merge dev_evan
+更新 a34df20..cfcff0b
+Fast-forward
+ 0810-python-note |  6 +++++-
+ evan             | 22 ++++++++++++++++++++++
+ 2 files changed, 27 insertions(+), 1 deletion(-)
+ create mode 100644 evan
+
+hyh@hyh-iMac:~/git/0807git/python$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To git@github.com:hyhplus/python.git
+   a34df20..cfcff0b  master -> master
+
+hyh@hyh-iMac:~/git/0807git/python$ git checkout jack-dev origin/jack-dev
+error: pathspec 'jack-dev' did not match any file(s) known to git.
+error: pathspec 'origin/jack-dev' did not match any file(s) known to git.
+hyh@hyh-iMac:~/git/0807git/python$ git checkout -b jack-dev origin/jack-dev
+分支 jack-dev 设置为跟踪来自 origin 的远程分支 jack-dev。
+切换到一个新分支 'jack-dev'
+hyh@hyh-iMac:~/git/0807git/python$ git branch
+  dev
+  dev_evan
+* jack-dev
+  master
+hyh@hyh-iMac:~/git/0807git/python$ git pull
+Already up-to-date.
+hyh@hyh-iMac:~/git/0807git/python$ git push
+To git@github.com:hyhplus/python.git
+ ! [rejected]        dev -> dev (non-fast-forward)
+error: 无法推送一些引用到 'git@github.com:hyhplus/python.git'
+提示：更新被拒绝，因为推送的一个分支的最新提交落后于其对应的远程分支。
+提示：检出该分支并整合远程变更（如 'git pull ...'），然后再推送。详见
+提示：'git push --help' 中的 'Note about fast-forwards' 小节。
+hyh@hyh-iMac:~/git/0807git/python$ 
+
