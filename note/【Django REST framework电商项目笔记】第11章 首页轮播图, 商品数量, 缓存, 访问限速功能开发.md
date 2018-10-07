@@ -31,8 +31,9 @@ class BannerViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
 router.register(r'banners', BannerViewset, base_name="banners")
 ```
 
-没有报错但是也没有数据，我们直接来我们的后台管理系统中添加三张轮播图。  
-![image](https://img-blog.csdn.net/20181005232620652?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1l1eWgxMzE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)  
+没有报错但是也没有数据，我们直接来我们的后台管理系统中添加三张轮播图。
+![image](images/1.jpg)
+![image](https://img-blog.csdn.net/20181005232620652?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1l1eWgxMzE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 ##  新品功能接口开发
 新品是 goods 中有一个 is_new 的选项  
