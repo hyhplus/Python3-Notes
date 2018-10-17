@@ -21,7 +21,7 @@ mv python python.bak
 ```
 
 安装Python3.6与解压命令  
-``py
+```py
 wget https://www.python.org/ftp/python/3.6.3/Python-3.6.3.tar.xz
 tar -xvJf  Python-3.6.3.tar.xz
 cd Python-3.6.3
@@ -64,9 +64,9 @@ vim yumdownloader
 把#! /usr/bin/python都修改为#! /usr/bin/python2  
 
 > 相关文档：  
-> ![centos7+django+python3+mysql+阿里云部署项目全流程](https://blog.csdn.net/a394268045/article/details/79288718?utm_source=blogxgwz5)  
-> ![Flask构建弹幕微电影网站- 部署上线](https://www.jianshu.com/p/0f2eb99a5393)  
-> ![centos7 下通过nginx+uwsgi部署django应用](http://projectsedu.com/)  
+> [centos7+django+python3+mysql+阿里云部署项目全流程](https://blog.csdn.net/a394268045/article/details/79288718?utm_source=blogxgwz5)  
+> [Flask构建弹幕微电影网站- 部署上线](https://www.jianshu.com/p/0f2eb99a5393)  
+> [centos7 下通过nginx+uwsgi部署django应用](http://projectsedu.com/)  
 
 ## 4. 安装MySQL5.7
 下载MySQL源安装包  
