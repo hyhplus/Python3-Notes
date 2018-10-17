@@ -167,7 +167,7 @@ server {
 # the port your site will be served on
 listen      80;
 # the domain name it will serve for
-server_name 132.232.183.81; # substitute your machine's IP address or FQDN
+server_name 132.232.183.18; # substitute your machine's IP address or FQDN
 charset     utf-8;
 
 # max upload size
