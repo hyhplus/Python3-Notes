@@ -1,0 +1,38 @@
+Owner avatar
+Python3-Notes
+Public
+hyhplus/Python3-Notes
+Go to file
+t
+Name		
+hyhplus
+hyhplus
+Update CenOS7部署Django项目.md
+6862d38
+ · 
+7 years ago
+1.python入门
+添加Django项目部署笔记
+7 years ago
+2.python进阶
+添加Django项目部署笔记
+7 years ago
+Django项目部署
+Update CenOS7部署Django项目.md
+7 years ago
+standby
+添加Django项目部署笔记
+7 years ago
+README.md
+Update README.md
+7 years ago
+Repository files navigation
+README
+Python3 Notes include:
+一、Python3入门篇
+python3基础
+Linux基础
+MySQL
+Html+CSS
+JavaScript
+jQuery
